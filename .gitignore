@@ -19,6 +19,8 @@ yarn-error.log*
 # Environment
 .env
 .env*.local
+.env*
+!.env.example
 
 # OS
 .DS_Store
@@ -28,5 +30,6 @@ Thumbs.db
 *.tsbuildinfo
 next-env.d.ts
 
+# Vercel & Supabase
 .vercel
-.env*
+supabase/.temp/
