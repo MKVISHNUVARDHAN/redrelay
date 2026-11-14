@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --navy-base: #090F19;
+    --navy-card: #101B2C;
+    --crimson-accent: #D33D56;
+    --emerald-safe: #177A63;
+    --amber-pending: #D97706;
+  }
+
+  body {
+    @apply bg-[#0B1320] text-slate-100 antialiased selection:bg-crimson-600 selection:text-white;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom Tactical Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B1320;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #233550;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #364F73;
+}
+
+/* Subtle tactical grid background */
+.bg-tactical-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Radar pulse animation */
+@keyframes radarSweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.radar-sweep {
+  animation: radarSweep 6s linear infinite;
+  transform-origin: center center;
+}
+
+/* Glowing text and borders */
+.glow-border-crimson {
+  box-shadow: 0 0 15px rgba(211, 61, 86, 0.3);
+  border-color: rgba(211, 61, 86, 0.6);
+}
+
+.glow-border-emerald {
+  box-shadow: 0 0 15px rgba(23, 122, 99, 0.3);
+  border-color: rgba(23, 122, 99, 0.6);
+}
+
+.glow-border-amber {
+  box-shadow: 0 0 15px rgba(217, 119, 6, 0.3);
+  border-color: rgba(217, 119, 6, 0.6);
+}
