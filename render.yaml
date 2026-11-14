@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: redrelay-backend
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: NEXT_PUBLIC_APP_NAME
+        value: "RedRelay — AI Emergency Blood Rescue Network"
+      - key: NEXT_PUBLIC_DEMO_MODE
+        value: "true"
+      - key: NEXT_PUBLIC_NBTC_STANDARDS_ENFORCED
+        value: "true"
